@@ -5,13 +5,13 @@
  */
 #include "bookrec.h"
 
-void bookrec::swap(struct book_rec *a, struct book_rec *b){
+void swap(struct book_rec *a, struct book_rec *b){
     struct book_rec tmp = *a;
     *a = *b;
     *b = tmp;
 }
 
-void bookrec::sort(struct book_rec array[]){
+void sort(struct book_rec array[]){
     for (int i=0; i<5; i++) {
         for (int j=0; j<5; j++) {
             if (j+1 < 5) {
