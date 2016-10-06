@@ -1,0 +1,14 @@
+int count(char str[], char find, int num){
+    if (strlen(str) > 0) {
+        if (str[0] == find) {
+            num++;
+        }
+        str = &str[1];
+        return count(str, find, num);
+    }
+    return num;
+}
+//以下請忽略,驗證用的
+int main(){
+    printf("%d\n", count("hi, asshole", 's', 0));
+}
