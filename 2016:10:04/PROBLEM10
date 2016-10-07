@@ -25,6 +25,6 @@ bool check(char str[]){
 int main(){
     char a[] = "Madam, I'm Adam";
     char b[] = "Able was I ere I saw Elba";
-    printf("%s -> %s\n", a, check(a) ? "true" : "false");
-    printf("%s -> %s\n", b, check(b) ? "true" : "false");
+    printf("-> %s\n", check(a) ? "true" : "false");
+    printf("-> %s\n", check(b) ? "true" : "false");
 }
