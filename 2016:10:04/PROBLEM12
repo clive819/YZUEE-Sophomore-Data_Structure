@@ -1,12 +1,11 @@
-int count(char str[], char find, int num){
-    if (strlen(str) > 0) {
+int count(char str[], char find){
+    if (str[0] != '\0') {
         if (str[0] == find) {
-            num++;
+            return 1 + count(&str[1], find);
         }
-        str = &str[1];
-        return count(str, find, num);
+        return  0 + count(&str[1], find);
     }
-    return num;
+    return 0;
 }
 //以下請忽略,驗證用的
 int main(){
