@@ -1,26 +1,30 @@
-bool check(char str[], int pos){
-    int reverse_pos = strlen(str) - 1 - pos;
-    if (pos <= reverse_pos) {
-        if (str[pos] == ' ' || str[reverse_pos] == ' ') {
-            return check(str, pos+1);
+bool check(char str[]){
+    int reverse_pos = strlen(str) - 1;
+    if (str[0] != '\0') {
+        if (str[0] == ' ' || str[reverse_pos] == ' ') {
+            str[reverse_pos] = '\0';
+            return check(&str[1]);
         }
-        else if (str[pos] >= 65 && str[pos] <= 90) {
-            return check(str, pos+1);
+        else if (str[0] >= 65 && str[0] <= 90) {
+            str[reverse_pos] = '\0';
+            return check(&str[1]);
         }
         else if (str[reverse_pos] >= 65 && str[reverse_pos] <= 90) {
-            return check(str, pos+1);
+            str[reverse_pos] = '\0';
+            return check(&str[1]);
         }
-        if (str[pos] != str[reverse_pos]) {
+        if (str[0] != str[reverse_pos]) {
             return false;
         }
-        return check(str, pos+1);
+        str[reverse_pos] = '\0';
+        return check(&str[1]);
     }
     return true;
 }
-//以下請忽略,驗證用的 
+//以下請忽略,驗證用的
 int main(){
     char a[] = "Madam, I'm Adam";
     char b[] = "Able was I ere I saw Elba";
-    printf("%s -> %s\n", a, check(a, 0) ? "true" : "false");
-    printf("%s -> %s\n", b, check(b, 0) ? "true" : "false");
+    printf("%s -> %s\n", a, check(a) ? "true" : "false");
+    printf("%s -> %s\n", b, check(b) ? "true" : "false");
 }
