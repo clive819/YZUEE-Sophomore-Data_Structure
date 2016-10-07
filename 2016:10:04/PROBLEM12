@@ -9,5 +9,5 @@ int count(char str[], char find){
 }
 //以下請忽略,驗證用的
 int main(){
-    printf("%d\n", count("hi, asshole", 's', 0));
+    printf("%d\n", count("hi, asshole", 's'));
 }
