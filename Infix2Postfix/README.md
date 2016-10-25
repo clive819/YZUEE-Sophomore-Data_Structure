@@ -1,0 +1,1 @@
+-Infix -> Postfix 簡易版
